@@ -1,0 +1,15 @@
+# Node modules
+frontend/node_modules/
+
+# Backend uploads (keep the folder but not the files)
+backend/uploads/audio/*
+!backend/uploads/audio/.gitkeep
+backend/uploads/thumbnails/*
+!backend/uploads/thumbnails/.gitkeep
+
+# Env files
+frontend/.env
+frontend/.env.local
+
+# macOS
+.DS_Store

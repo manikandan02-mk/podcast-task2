@@ -1,0 +1,63 @@
+/* src/components/Header.css */
+.header {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-admin {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.btn-logout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: background var(--transition);
+}
+.btn-logout:hover { background: #333; }
+.btn-logout img {
+  width: 14px;
+  height: 14px;
+  filter: invert(1);
+}
+
+@media (max-width: 480px) {
+  .header-inner { padding: 0 16px; }
+  .header-admin { display: none; }
+}

@@ -1,0 +1,93 @@
+/* src/components/AudioPlayer.css */
+.player-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 8500;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.player-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 32px;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  animation: scaleIn 0.25s ease;
+}
+@keyframes scaleIn {
+  from { transform: scale(0.88); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.player-close {
+  position: absolute;
+  top: 14px; right: 16px;
+  background: var(--gray-100);
+  border: none;
+  border-radius: 50%;
+  width: 30px; height: 30px;
+  font-size: 1.2rem;
+  color: var(--black);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.player-close:hover { background: var(--gray-200); }
+
+.player-thumb {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 20px;
+  aspect-ratio: 16/9;
+}
+.player-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+.player-date { font-size: 0.78rem; color: var(--gray-400); margin-bottom: 4px; }
+.player-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+.player-desc { font-size: 0.82rem; color: var(--gray-600); margin-bottom: 20px; line-height: 1.5; }
+
+.player-progress-bar {
+  height: 6px;
+  background: var(--gray-200);
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+.player-progress-fill {
+  height: 100%;
+  background: var(--green);
+  border-radius: 3px;
+  transition: width 0.1s linear;
+}
+.player-times {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--gray-400);
+  margin-bottom: 20px;
+}
+
+.player-controls { display: flex; justify-content: center; }
+.player-play-btn {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--green);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition), transform var(--transition);
+  box-shadow: 0 4px 12px rgba(140,198,63,0.4);
+}
+.player-play-btn:hover {
+  background: var(--green-dark);
+  transform: scale(1.08);
+}
